@@ -3,7 +3,6 @@ let posts = [];
 const likedPostsId = [];
 
 const reportedPostsId = [];
-console.log(reportedPostsId);
 
 const getLikedPosts = () => {
   return posts.filter((post) => likedPostsId.includes(post.id));
@@ -37,7 +36,6 @@ const displayContent = (text) => {
 };
 
 const switchTab = (id) => {
-  console.log(id);
   if (id === "posts") {
     document.getElementById("posts").style.display = "grid";
     document.getElementById("liked").style.display = "none";
