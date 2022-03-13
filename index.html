@@ -1,85 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Insta-Sohor</title>
-        <link rel="stylesheet" href="./css/style.css" />
-        <!-- Latest compiled and minified CSS -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-            crossorigin="anonymous"
-        />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insta-Sohor</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Latest compiled and minified CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
 
-        <!-- google Montserrat  font  -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-            integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
-    </head>
+    <!-- google Montserrat  font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-    <body>
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light px-5">
-                <a class="navbar-brand" href="#">Insta-Sohor</a>
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light px-5">
+        <a class="navbar-brand" href="#">Insta-Sohor</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-                <div
-                    class="collapse navbar-collapse justify-content-end"
-                    id="navbarSupportedContent"
-                >
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-link active" role="button" onclick="switchTab( 'posts' )">
-                            <i class="fa-solid fa-house"></i>
-                        </li>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav mr-auto">
+            <li
+              class="nav-link active"
+              role="button"
+              onclick="switchTab( 'posts' )"
+            >
+              <i class="fa-solid fa-house"></i>
+            </li>
 
-                        <li class="nav-link active" role="button" onclick="switchTab( 'liked' )">
-                            <i class="fa-solid fa-heart text-danger"></i>
-                        </li>
+            <li
+              class="nav-link active"
+              role="button"
+              onclick="switchTab( 'liked' )"
+            >
+              <i class="fa-solid fa-heart text-danger"></i>
+            </li>
 
-                        <li class="nav-link active" role="button" onclick="switchTab( 'reported' )">
-                            <i class="fa-solid fa-eye-slash"></i>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-        <main class="main container mx-auto p-3">
-            <div id="posts">
+            <li
+              class="nav-link active"
+              role="button"
+              onclick="switchTab( 'reported' )"
+            >
+              <i class="fa-solid fa-eye-slash"></i>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="main container mx-auto p-3">
+      <div id="posts"></div>
+      <div id="liked">
+        <h1>Liked posts</h1>
+      </div>
+
+      <div id="reported">
+        <h1>Reported posts</h1>
+      </div>
+    </main>
+    <section class="quistions container my-5">
+      <div class="accordion accordion-flush" id="accordionFlushExample my-3">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseOne"
+              aria-expanded="false"
+              aria-controls="flush-collapseOne"
+            >
+              How does javascript work?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseOne"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingOne"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              JavaScript is a synchronous, single-threaded programming language.
+              Behind the reason is it can only execute one command at a time in
+              a specific order.When the browser loads the JavaScript code ,the
+              browser has a built-in interpreter that reads the JavaScript code
+              it finds in the page and runs it.
             </div>
-            <div id="liked">
-                <h1>Liked posts</h1>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwo"
+              aria-expanded="false"
+              aria-controls="flush-collapseTwo"
+            >
+              Whate does javascript event loop do?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseTwo"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingTwo"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              JavaScript event loop monitor the Call Stack and the Callback
+              Queue. If the Call Stack is empty then the Event Loop will take
+              the first event from the queue and will push it to the Call
+              Stack.And each event is just a function callback.
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer></footer>
 
-            <div id="reported">
-                <h1>Reported posts</h1>
-            </div>
-        </main>
-        <footer></footer>
-
-        <!-- add javascript  file  -->
-        <script src="./js/app.js"></script>
-    </body>
+    <!-- add javascript  file  -->
+    <script src="./js/app.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
